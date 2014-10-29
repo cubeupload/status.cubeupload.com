@@ -1,0 +1,40 @@
+POST /heartbeat
+	serverKey 	unique ID of the server, random hash or primary key in DB?
+	status		JSON encoded object of the server's status. Example:
+
+	{
+		'up':
+		[
+			'httpd',
+			'mysql'
+		],
+		'down':
+		[],
+		'unknown':
+		[]
+	}
+
+	Heartbeat controller looks up all the services the server provides and checks those values supplied in status object.
+	Controller checks to make sure all services are found in 'up' array first. If any are missing, check the 'down' and
+	'unknown' arrays and update the service status accordingly. If a service is missing from the entire status update, assume it is unknown.
+
+	Response:
+		{ 
+			'accepted',
+			'other_servers':
+			[
+				'server_name':
+				{
+					'up':
+					[
+						'httpd',
+						'mysql'
+					],
+					'down':
+					[],
+					'unknown':
+					[]
+				}
+			]
+		}
+
