@@ -1,0 +1,10 @@
+To: tom@cubeupload.com
+Subject: 
+Message-ID: <c6be384297cb9aac58906b25329323e1@swift.generated>
+Date: Wed, 29 Oct 2014 23:11:35 +0000
+From: reports@cubeupload.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Here's your shitty report.

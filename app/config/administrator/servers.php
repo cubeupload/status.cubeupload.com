@@ -16,6 +16,9 @@
 			'hostname' => array(
 				'title' => 'Hostname'
 			),
+			'description' => array(
+				'title' => 'Description'
+			),
 			'services' => array(
 				'title' => 'Services',
 				'relationship' => 'services',
@@ -39,6 +42,10 @@
 			'hostname' => array(
 				'title' => 'Hostname',
 				'type' => 'text'
+			),
+			'description' => array(
+				'title' => 'Description',
+				'type' => 'textarea'
 			)
 		)
 	);

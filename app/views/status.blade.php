@@ -38,6 +38,4 @@
 					No servers configured :(
 
 					@endif
-					
-					<a class="reportLink" href="/report">Report an Issue</a>
 @stop

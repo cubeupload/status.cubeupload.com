@@ -1,0 +1,10 @@
+To: sysadmin@cubeupload.com
+Subject: 
+Message-ID: <0ddcec015fe578d5b9c9cc64db8f8097@localhost>
+Date: Wed, 29 Oct 2014 23:09:59 +0000
+From: reports@cubeupload.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Here's your shitty report.

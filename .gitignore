@@ -3,6 +3,7 @@
 .env.php
 /vendor
 /public/packages/frozennode/administrator
+StartServer.bat
 
 # =========================
 # Operating System Files

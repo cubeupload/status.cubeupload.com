@@ -48,9 +48,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => '',
-			'username'  => '',
-			'password'  => '',
+			'database'  => 'cubeupload_status',
+			'username'  => 'cube_status',
+			'password'  => 'zxneL6AStzYE7hwp',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

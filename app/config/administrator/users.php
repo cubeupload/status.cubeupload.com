@@ -12,6 +12,7 @@
 
 			'id',
 			'username',
+			'email',
 			'enabled' => array(
 				'title' => 'Enabled',
 				'select' => 'IF((:table).enabled, \'Yes\', \'No\')'
@@ -27,6 +28,10 @@
 			'username' => array(
 				'title' => 'Username',
 				'type' => 'text',
+			),
+			'email' => array(
+				'title' => 'Email Address',
+				'type' => 'text'
 			),
 			'password' => array(
 				'title' => 'Password',
