@@ -2,6 +2,7 @@
 .env.*.php
 .env.php
 /vendor
+/public/packages/frozennode/administrator
 
 # =========================
 # Operating System Files
