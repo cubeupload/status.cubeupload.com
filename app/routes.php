@@ -35,7 +35,10 @@ Route::post('/login', function()
 	);
 
 	if( array_key_exists( 'remember_me', $input ) )
+	{
 		$remember = true;
+		unset( $input['remember_me'] );
+	}
 
 	$v = Validator::make( $input, $rules );
 
@@ -54,6 +57,49 @@ Route::get('logout', function()
 {
 	Auth::logout();
 	return Redirect::to('/');
+});
+
+Route::post('heartbeat', function()
+{
+	$input = Input::all();
+
+	$rules = array(
+		'id' => 'required|exists:servers',
+		'status' => 'required',
+		'key' => 'required'
+	);
+
+	$v = Validator::make($input, $rules);
+
+	if( $v->fails() )
+	{
+		return Response::json( array('error' => $v->errors()->all() ) );
+	}
+
+	// server existence checked above in the validator.
+	$server = Server::whereId( $input['id'] )->first();
+
+	if( $server->authKey != $input['key'] )
+		return Response::json( array('error' => 'Invalid auth key'));
+
+	$status = json_decode( $input['status'], true );
+
+	$currentServices = $server->services()->get();
+	//dd( $status );
+	foreach( $currentServices as $service )
+	{
+		if( array_key_exists( 'up', $status ) && in_array( $service->name, $status['up']) )
+			$service->status = 'up';
+		if( array_key_exists( 'down', $status ) && in_array( $service->name, $status['down'] ) )
+			$service->status = 'down';
+		if( array_key_exists( 'unknown', $status ) &&  in_array( $service->name, $status['unknown'] ) )
+			$service->status = 'unknown';
+
+		$service->save();
+	}
+
+	return $server->services()->get();
+
 });
 
 Route::controller('service', 'ServiceController');

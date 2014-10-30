@@ -19,6 +19,7 @@ class CreateServersTable extends Migration {
 			$table->string('ip');
 			$table->string('hostname');
 			$table->string('description');
+			$table->string('authKey');
 			$table->integer('metric');
 			$table->timestamps();
 		});

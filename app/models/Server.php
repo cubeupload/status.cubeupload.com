@@ -36,5 +36,10 @@
 				return $this->currentStatus;
 			}
 		}
+
+		public function generateAuthKey()
+		{
+			$this->authKey = str_random(16);
+		}
 		
 	}

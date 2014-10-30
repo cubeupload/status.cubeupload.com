@@ -46,6 +46,27 @@
 			'description' => array(
 				'title' => 'Description',
 				'type' => 'textarea'
+			),
+			'authKey' => array(
+				'title' => 'Auth Key',
+				'editable' => false
+			),
+		),
+
+		'actions' => array(
+			'generate_key' => array(
+				'title' => 'New Auth Key',
+				'messages' => array(
+					'active' => 'Generating key...',
+					'success' => 'Done',
+					'error' => 'Error generating auth key :('
+				),
+				'action' => function( &$server )
+				{
+					$server->generateAuthKey();
+					$server->save();
+					return true;
+				}
 			)
 		)
 	);
